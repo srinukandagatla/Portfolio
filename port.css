@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #1894e1;
+}
+
+.my_name {
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.home {
+    height: 100vh;
+    background: linear-gradient(-90deg, black 75%, #fff 25%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background: black;
+    border-radius: 50%;
+    border: 25px solid #fff;
+    outline: 25px solid black;
+    animation: animateImage 1.5s ease-in-out forwards;
+}
+
+.home-image img.mypic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+@keyframes animateImage {
+    0% {
+        transform: scale(0.5) rotate(-30deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.home-content {
+    max-width: 600px;
+    color: #fff;
+    text-align: right;
+}
+
+.home-content .para {
+    font-size: 20px;
+    gap: 10%;
+}
+
+.home-content h1 {
+    font-size: 55px;
+    line-height: 1.2;
+}
+
+.home-content h3 {
+    font-size: 40px;
+    color: transparent;
+    -webkit-text-stroke: .5px #fff;
+    background-image: linear-gradient(#00abf0,#00abf0);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -410px 0;
+    animation: animateText 4s linear infinite;
+}
+
+@keyframes animateText {
+    0%, 95%, 100% {
+        background-position: -410px 0;
+    }
+    65%, 85% {
+        background-position: 0 0;
+    }
+}
+
+.home-content p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.navs {
+    margin: 25px 0 40px;
+}
+
+.navs a {
+    text-decoration: none;
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+    position: relative;
+    opacity: 0;
+    animation: slideIn 0.3s forwards;
+}
+
+.navs a:nth-child(1) { animation-delay: 0.2s; }
+.navs a:nth-child(2) { animation-delay: 0.4s; }
+.navs a:nth-child(3) { animation-delay: 0.6s; }
+.navs a:nth-child(4) { animation-delay: 0.8s; }
+.navs a:nth-child(5) { animation-delay: 1s; }
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.navs a:hover {
+    background: #00abf0;
+    color: #fff;
+    border-color: #00abf0;
+    box-shadow: 0 0 10px #00abf0;
+}
+
+.btn {
+    padding: 12px 35px;
+    background: #00abf0;
+    border-radius: 40px;
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px #00abf0;
+    opacity: 0;
+    animation: slideUp 0.5s forwards 1.2s;
+    /* The delay here ensures it comes after the icons */
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width:500px) {
+    .mypic{
+        display: none;
+    }
+    
+}
